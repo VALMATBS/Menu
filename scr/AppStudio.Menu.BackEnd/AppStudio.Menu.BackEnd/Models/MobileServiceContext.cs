@@ -51,5 +51,15 @@ namespace AppStudio.Menu.BackEnd.Models
                 new AttributeToColumnAnnotationConvention<TableColumnAttribute, string>(
                     "ServiceTableColumn", (property, attributes) => attributes.Single().ColumnType.ToString()));
         }
+
+       public DbSet<Data.BeveragesSchema> BeveragesSchemas { get; set; }
+
+        public DbSet<DataObjects.DessertsSchema> DessertsSchemas { get; set; }
+
+        public DbSet<DataObjects.MainSchema> MainSchemas { get; set; }
+
+        public DbSet<DataObjects.SpecialOffersSchema> SpecialOffersSchemas { get; set; }
+
+        public DbSet<DataObjects.StartersSchema> StartersSchemas { get; set; }
     }
 }

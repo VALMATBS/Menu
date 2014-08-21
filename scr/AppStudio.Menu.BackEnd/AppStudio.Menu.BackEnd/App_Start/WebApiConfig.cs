@@ -7,6 +7,8 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System.Data.Entity.Migrations;
+using AppStudio.Menu.BackEnd.Migrations;
 using Microsoft.WindowsAzure.Mobile.Service;
 
 namespace AppStudio.Menu.BackEnd
@@ -30,6 +32,9 @@ namespace AppStudio.Menu.BackEnd
             // To display errors in the browser during development, uncomment the following
             // line. Comment it out again when you deploy your service for production use.
             // config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
+
+            var migrator = new DbMigrator(new Configuration());
+            migrator.Update();
         }
     }
 }

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AppStudio.Data.BeveragesSchema">
+    <Position X="9.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataObjects\BeveragesSchema.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppStudio.Menu.BackEnd.DataObjects.DtoBase">
+    <Position X="6.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAEAAQAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataObjects\DtoBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.WindowsAzure.Mobile.Service.EntityData">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <Members>
+      <Method Name="EntityData" Hidden="true" />
+    </Members>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AppStudio.Menu.BackEnd.DataObjects.StartersSchema">
+    <Position X="1.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataObjects\StartersSchema.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppStudio.Menu.BackEnd.DataObjects.SpecialOffersSchema">
+    <Position X="2.5" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAEAAAABAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataObjects\SpecialOffersSchema.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppStudio.Menu.BackEnd.DataObjects.MainSchema">
+    <Position X="6.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataObjects\MainSchema.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppStudio.Menu.BackEnd.DataObjects.DessertsSchema">
+    <Position X="4" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataObjects\DessertsSchema.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

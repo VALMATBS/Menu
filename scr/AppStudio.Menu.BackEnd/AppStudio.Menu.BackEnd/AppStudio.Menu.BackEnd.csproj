@@ -209,6 +209,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BeveragesSchemaController.cs" />
+    <Compile Include="Controllers\DessertsSchemaController.cs" />
+    <Compile Include="Controllers\MainSchemaController.cs" />
+    <Compile Include="Controllers\SpecialOffersSchemaController.cs" />
+    <Compile Include="Controllers\StartersSchemaController.cs" />
+    <Compile Include="DataObjects\BeveragesSchema.cs" />
+    <Compile Include="DataObjects\DessertsSchema.cs" />
+    <Compile Include="DataObjects\DtoBase.cs" />
+    <Compile Include="DataObjects\MainSchema.cs" />
+    <Compile Include="DataObjects\SpecialOffersSchema.cs" />
+    <Compile Include="DataObjects\StartersSchema.cs" />
+    <Compile Include="Migrations\201408162000538_V_0.cs" />
+    <Compile Include="Migrations\201408162000538_V_0.Designer.cs">
+      <DependentUpon>201408162000538_V_0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MobileServiceContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -229,14 +245,23 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="DataObjects\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Performance\Microsoft.ServiceBus.MessagingPerformanceCounters.man" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataObjects\ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controllers\ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201408162000538_V_0.resx">
+      <DependentUpon>201408162000538_V_0.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

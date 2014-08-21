@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AppStudio.Menu.BackEnd.Controllers.BeveragesSchemaController">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <Members>
+      <Method Name="Initialize" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAQAAQAAAAAAAAAAhAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\BeveragesSchemaController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppStudio.Menu.BackEnd.Controllers.DessertsSchemaController">
+    <Position X="3.25" Y="0.5" Width="2" />
+    <Members>
+      <Method Name="Initialize" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAkCACAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Controllers\DessertsSchemaController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppStudio.Menu.BackEnd.Controllers.MainSchemaController">
+    <Position X="5.75" Y="0.5" Width="2" />
+    <Members>
+      <Method Name="Initialize" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQBAAQAAAAAAAAABAAAgAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Controllers\MainSchemaController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppStudio.Menu.BackEnd.Controllers.SpecialOffersSchemaController">
+    <Position X="0.5" Y="3.25" Width="2.5" />
+    <Members>
+      <Method Name="Initialize" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAKAAAAAAgAAQAAAAAAAAAAAQAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Controllers\SpecialOffersSchemaController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppStudio.Menu.BackEnd.Controllers.StartersSchemaController">
+    <Position X="3.5" Y="3.25" Width="2" />
+    <Members>
+      <Method Name="Initialize" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAhAAAAAAAAAAAAAEAAAAAAQAAIA=</HashCode>
+      <FileName>Controllers\StartersSchemaController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
