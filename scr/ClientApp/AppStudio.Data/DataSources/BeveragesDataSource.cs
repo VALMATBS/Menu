@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AppStudio.Data.DataSources;
 
 namespace AppStudio.Data
 {
@@ -17,7 +18,7 @@ namespace AppStudio.Data
         }
 
         private readonly IEnumerable<BeveragesSchema> _data = new BeveragesSchema[]
-		{
+        {
             new BeveragesSchema
             {
                 Title = "Beverage 1",
@@ -69,14 +70,12 @@ Curabitur accumsan tortor nibh, id viverra ante egestas non. Phasellus tortor ma
     "a non ante sit amet eros dictum bibendum. Donec et convallis urna. Morbi id vene" +
     "natis nunc. Phasellus at odio vitae ante luctus facilisis. ",
             },
-		};
+        };
 
         public async override Task<IEnumerable<BeveragesSchema>> LoadDataAsync()
         {
-            return await Task.Run(() =>
-            {
-                return _data;
-            });
+            var mobileService = new MobileService<BeveragesSchema>();
+            return await mobileService.Table.ToListAsync();
         }
     }
 }

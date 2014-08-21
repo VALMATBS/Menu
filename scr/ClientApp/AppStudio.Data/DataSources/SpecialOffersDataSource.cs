@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AppStudio.Data.DataSources;
 
 namespace AppStudio.Data
 {
@@ -70,10 +71,9 @@ namespace AppStudio.Data
 
         public async override Task<IEnumerable<SpecialOffersSchema>> LoadDataAsync()
         {
-            return await Task.Run(() =>
-            {
-                return _data;
-            });
+            var mobileService = new MobileService<SpecialOffersSchema>();
+            return await mobileService.Table.ToListAsync();
+          
         }
     }
 }

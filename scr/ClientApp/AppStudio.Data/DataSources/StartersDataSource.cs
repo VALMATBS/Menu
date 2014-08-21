@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AppStudio.Data.DataSources;
 
 namespace AppStudio.Data
 {
@@ -66,10 +67,9 @@ Duis consectetur sit amet neque in posuere. Vestibulum vitae sagittis ipsum. Nul
 
         public async override Task<IEnumerable<StartersSchema>> LoadDataAsync()
         {
-            return await Task.Run(() =>
-            {
-                return _data;
-            });
+            var mobileService = new MobileService<StartersSchema>();
+            return await mobileService.Table.ToListAsync();
+          
         }
     }
 }

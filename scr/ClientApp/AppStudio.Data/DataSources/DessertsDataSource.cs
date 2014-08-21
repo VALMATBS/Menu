@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AppStudio.Data.DataSources;
 
 namespace AppStudio.Data
 {
@@ -76,10 +77,8 @@ Nulla facilisi. Mauris neque odio, egestas ac scelerisque a, ullamcorper id nibh
 
         public async override Task<IEnumerable<DessertsSchema>> LoadDataAsync()
         {
-            return await Task.Run(() =>
-            {
-                return _data;
-            });
+            var mobileService = new MobileService<DessertsSchema>();
+            return await mobileService.Table.ToListAsync();
         }
     }
 }
