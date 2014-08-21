@@ -38,7 +38,7 @@
         <StackPanel>
             <TextBlock Margin="0,16" Text="starters" Style="{StaticResource SubHeaderText}" />
           <RichTextBlock Margin="0,12"  Style="{StaticResource Html2XamlStyle}"
-                       html2xaml:Properties.Html="{Binding starter1}" />
+                       html2xaml:Properties.Html="{Binding Starter1}" />
         </StackPanel>
         </ScrollViewer>
     </DataTemplate>
@@ -48,7 +48,7 @@
         <StackPanel>
             <TextBlock Margin="0,16" Text="mains" Style="{StaticResource SubHeaderText}" />
           <RichTextBlock Margin="0,12"  Style="{StaticResource Html2XamlStyle}"
-                       html2xaml:Properties.Html="{Binding main1}" />
+                       html2xaml:Properties.Html="{Binding Main1}" />
         </StackPanel>
         </ScrollViewer>
     </DataTemplate>
@@ -58,7 +58,7 @@
         <StackPanel>
             <TextBlock Margin="0,16" Text="desserts" Style="{StaticResource SubHeaderText}" />
           <RichTextBlock Margin="0,12"  Style="{StaticResource Html2XamlStyle}"
-                       html2xaml:Properties.Html="{Binding dessert1}" />
+                       html2xaml:Properties.Html="{Binding Dessert1}" />
         </StackPanel>
         </ScrollViewer>
     </DataTemplate>

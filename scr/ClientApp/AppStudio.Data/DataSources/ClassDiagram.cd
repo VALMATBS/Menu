@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AppStudio.Data.BeveragesDataSource">
+    <Position X="2.25" Y="3.75" Width="1.75" />
+    <Members>
+      <Field Name="_data" Hidden="true" />
+      <Property Name="CacheKey" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAgAAAAAAAgAAAAAAAACA=</HashCode>
+      <FileName>DataSources\BeveragesDataSource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppStudio.Data.DessertsDataSource">
+    <Position X="7" Y="3.75" Width="1.75" />
+    <Members>
+      <Field Name="_data" Hidden="true" />
+      <Property Name="CacheKey" Hidden="true" />
+    </Members>
+    <InheritanceLine Type="AppStudio.Data.DataSourceBase&lt;T&gt;" FixedToPoint="true">
+      <Path>
+        <Point X="7.75" Y="2.507" />
+        <Point X="7.75" Y="3.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAgAAAAAAAgAAAAAAAACA=</HashCode>
+      <FileName>DataSources\DessertsDataSource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppStudio.Data.DataSourceBase&lt;T&gt;">
+    <Position X="6.75" Y="0.5" Width="2" />
+    <Members>
+      <Property Name="CacheKey" Hidden="true" />
+      <Method Name="DataNeedToBeUpdated" Hidden="true" />
+      <Method Name="IsContentExpirated" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAACAAAgAAAAAAAhAAAAAAAACA=</HashCode>
+      <FileName>DataSources\DataSourceBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppStudio.Data.MainDataSource">
+    <Position X="9.25" Y="3.75" Width="1.75" />
+    <Members>
+      <Field Name="_data" Hidden="true" />
+      <Property Name="CacheKey" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAgAAAAAAAgAAAAAAAACA=</HashCode>
+      <FileName>DataSources\MainDataSource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppStudio.Data.SpecialOffersDataSource">
+    <Position X="4.5" Y="3.75" Width="2" />
+    <Members>
+      <Field Name="_data" Hidden="true" />
+      <Property Name="CacheKey" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAgAAAAAAAgAAAAAAAACA=</HashCode>
+      <FileName>DataSources\SpecialOffersDataSource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppStudio.Data.StartersDataSource">
+    <Position X="11.5" Y="3.75" Width="1.75" />
+    <Members>
+      <Field Name="_data" Hidden="true" />
+      <Property Name="CacheKey" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAgAAAAAAAgAAAAAAAACA=</HashCode>
+      <FileName>DataSources\StartersDataSource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

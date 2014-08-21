@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AppStudio.Data.BeveragesSchema" BaseTypeListCollapsed="true">
+    <Position X="9.75" Y="2" Width="1.5" />
+    <Members>
+      <Field Name="_description" Hidden="true" />
+      <Field Name="_image" Hidden="true" />
+      <Field Name="_subtitle" Hidden="true" />
+      <Field Name="_title" Hidden="true" />
+      <Property Name="DefaultContent" Hidden="true" />
+      <Property Name="DefaultImageUrl" Hidden="true" />
+      <Property Name="DefaultSummary" Hidden="true" />
+      <Property Name="DefaultTitle" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIIAiAEAE4AAAAAQAAAAAQBAAAAAAAAAgBAA=</HashCode>
+      <FileName>DataSchemas\BeveragesSchema.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AppStudio.Data.DessertsSchema" BaseTypeListCollapsed="true">
+    <Position X="6" Y="2" Width="1.5" />
+    <Members>
+      <Field Name="_description" Hidden="true" />
+      <Field Name="_image" Hidden="true" />
+      <Field Name="_subtitle" Hidden="true" />
+      <Field Name="_title" Hidden="true" />
+      <Property Name="DefaultContent" Hidden="true" />
+      <Property Name="DefaultImageUrl" Hidden="true" />
+      <Property Name="DefaultSummary" Hidden="true" />
+      <Property Name="DefaultTitle" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIIAiAEAE4AAAAAQAAAAAQBAAAAAAAAAgBAA=</HashCode>
+      <FileName>DataSchemas\DessertsSchema.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AppStudio.Data.MainSchema" BaseTypeListCollapsed="true">
+    <Position X="1.5" Y="2" Width="1.75" />
+    <Members>
+      <Field Name="_description" Hidden="true" />
+      <Field Name="_image" Hidden="true" />
+      <Field Name="_subtitle" Hidden="true" />
+      <Field Name="_title" Hidden="true" />
+      <Property Name="DefaultContent" Hidden="true" />
+      <Property Name="DefaultImageUrl" Hidden="true" />
+      <Property Name="DefaultSummary" Hidden="true" />
+      <Property Name="DefaultTitle" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIIAiAEAE4AAAAAQAAAAAQBAAAAAAAAAgBAA=</HashCode>
+      <FileName>DataSchemas\MainSchema.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AppStudio.Data.SpecialOffersSchema" BaseTypeListCollapsed="true">
+    <Position X="3.5" Y="2" Width="2.25" />
+    <Members>
+      <Field Name="_dessert1" Hidden="true" />
+      <Field Name="_main1" Hidden="true" />
+      <Field Name="_starter1" Hidden="true" />
+      <Field Name="_subtitle" Hidden="true" />
+      <Field Name="_title" Hidden="true" />
+      <Property Name="DefaultContent" Hidden="true" />
+      <Property Name="DefaultImageUrl" Hidden="true" />
+      <Property Name="DefaultSummary" Hidden="true" />
+      <Property Name="DefaultTitle" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAABAAAIIACAEAA4ABQAAQAAAIAgAAAAAACAAAgBAA=</HashCode>
+      <FileName>DataSchemas\SpecialOffersSchema.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AppStudio.Data.StartersSchema" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="2" Width="1.75" />
+    <Members>
+      <Field Name="_description" Hidden="true" />
+      <Field Name="_image" Hidden="true" />
+      <Field Name="_subtitle" Hidden="true" />
+      <Field Name="_title" Hidden="true" />
+      <Property Name="DefaultContent" Hidden="true" />
+      <Property Name="DefaultImageUrl" Hidden="true" />
+      <Property Name="DefaultSummary" Hidden="true" />
+      <Property Name="DefaultTitle" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIIAiAEAE4AAAAAQAAAAAQBAAAAAAAAAgBAA=</HashCode>
+      <FileName>DataSchemas\StartersSchema.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

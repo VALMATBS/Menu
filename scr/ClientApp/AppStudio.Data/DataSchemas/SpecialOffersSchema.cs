@@ -20,19 +20,19 @@ namespace AppStudio.Data
             set { SetProperty(ref _title, value); }
         }
  
-        public string dessert1
+        public string Dessert1
         {
             get { return _dessert1; }
             set { SetProperty(ref _dessert1, value); }
         }
  
-        public string main1
+        public string Main1
         {
             get { return _main1; }
             set { SetProperty(ref _main1, value); }
         }
  
-        public string starter1
+        public string Starter1
         {
             get { return _starter1; }
             set { SetProperty(ref _starter1, value); }
@@ -51,7 +51,7 @@ namespace AppStudio.Data
 
         public override string DefaultSummary
         {
-            get { return dessert1; }
+            get { return Dessert1; }
         }
 
         public override string DefaultImageUrl
@@ -61,7 +61,7 @@ namespace AppStudio.Data
 
         public override string DefaultContent
         {
-            get { return dessert1; }
+            get { return Dessert1; }
         }
 
         override public string GetValue(string fieldName)
@@ -73,11 +73,11 @@ namespace AppStudio.Data
                     case "title":
                         return String.Format("{0}", Title); 
                     case "dessert1":
-                        return String.Format("{0}", dessert1); 
+                        return String.Format("{0}", Dessert1); 
                     case "main1":
-                        return String.Format("{0}", main1); 
+                        return String.Format("{0}", Main1); 
                     case "starter1":
-                        return String.Format("{0}", starter1); 
+                        return String.Format("{0}", Starter1); 
                     case "subtitle":
                         return String.Format("{0}", Subtitle); 
                     case "defaulttitle":
@@ -101,7 +101,7 @@ namespace AppStudio.Data
                 return false;
             }
 
-            return this.Title == other.Title && this.dessert1 == other.dessert1 && this.main1 == other.main1 && this.starter1 == other.starter1 && this.Subtitle == other.Subtitle;
+            return this.Title == other.Title && this.Dessert1 == other.Dessert1 && this.Main1 == other.Main1 && this.Starter1 == other.Starter1 && this.Subtitle == other.Subtitle;
         }
     }
 }

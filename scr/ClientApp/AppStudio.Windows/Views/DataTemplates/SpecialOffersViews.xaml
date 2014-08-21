@@ -62,7 +62,7 @@
           
             <TextBlock Grid.Row="0" Style="{StaticResource HeaderText}" Text="starters" />
              <ScrollViewer Grid.Column="1" Grid.Row="1" Margin="0,12" VerticalScrollBarVisibility="Auto" >
-               <RichTextBlock Style="{StaticResource Html2XamlStyle}" html2xaml:Properties.Html="{Binding starter1}" />
+               <RichTextBlock Style="{StaticResource Html2XamlStyle}" html2xaml:Properties.Html="{Binding Starter1}" />
              </ScrollViewer>
         </Grid>
     </DataTemplate>
@@ -73,7 +73,7 @@
              <TextBlock  Margin="0,0,0,30" Style="{StaticResource HeaderText}" Text="starters" />
            
             <ScrollViewer Width="210" Height="400"  VerticalScrollBarVisibility="Auto">
-               <RichTextBlock Style="{StaticResource Html2XamlStyle}" html2xaml:Properties.Html="{Binding starter1}" />
+               <RichTextBlock Style="{StaticResource Html2XamlStyle}" html2xaml:Properties.Html="{Binding Starter1}" />
              </ScrollViewer>
         </StackPanel> 
         </Grid>
@@ -89,7 +89,7 @@
           
             <TextBlock Grid.Row="0" Style="{StaticResource HeaderText}" Text="mains" />
              <ScrollViewer Grid.Column="1" Grid.Row="1" Margin="0,12" VerticalScrollBarVisibility="Auto" >
-               <RichTextBlock Style="{StaticResource Html2XamlStyle}" html2xaml:Properties.Html="{Binding main1}" />
+               <RichTextBlock Style="{StaticResource Html2XamlStyle}" html2xaml:Properties.Html="{Binding Main1}" />
              </ScrollViewer>
         </Grid>
     </DataTemplate>
@@ -100,7 +100,7 @@
              <TextBlock  Margin="0,0,0,30" Style="{StaticResource HeaderText}" Text="mains" />
            
             <ScrollViewer Width="210" Height="400"  VerticalScrollBarVisibility="Auto">
-               <RichTextBlock Style="{StaticResource Html2XamlStyle}" html2xaml:Properties.Html="{Binding main1}" />
+               <RichTextBlock Style="{StaticResource Html2XamlStyle}" html2xaml:Properties.Html="{Binding Main1}" />
              </ScrollViewer>
         </StackPanel> 
         </Grid>
@@ -116,7 +116,7 @@
           
             <TextBlock Grid.Row="0" Style="{StaticResource HeaderText}" Text="desserts" />
              <ScrollViewer Grid.Column="1" Grid.Row="1" Margin="0,12" VerticalScrollBarVisibility="Auto" >
-               <RichTextBlock Style="{StaticResource Html2XamlStyle}" html2xaml:Properties.Html="{Binding dessert1}" />
+               <RichTextBlock Style="{StaticResource Html2XamlStyle}" html2xaml:Properties.Html="{Binding Dessert1}" />
              </ScrollViewer>
         </Grid>
     </DataTemplate>
@@ -127,7 +127,7 @@
              <TextBlock  Margin="0,0,0,30" Style="{StaticResource HeaderText}" Text="desserts" />
            
             <ScrollViewer Width="210" Height="400"  VerticalScrollBarVisibility="Auto">
-               <RichTextBlock Style="{StaticResource Html2XamlStyle}" html2xaml:Properties.Html="{Binding dessert1}" />
+               <RichTextBlock Style="{StaticResource Html2XamlStyle}" html2xaml:Properties.Html="{Binding Dessert1}" />
              </ScrollViewer>
         </StackPanel> 
         </Grid>
