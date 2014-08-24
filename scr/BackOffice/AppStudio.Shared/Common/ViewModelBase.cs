@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Net.NetworkInformation;
-
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Storage.Streams;
@@ -34,15 +34,7 @@ namespace AppStudio.ViewModels
         {
             get
             {
-                if (TextToSpeechVisibility == Visibility.Visible ||
-                    PinToStartVisibility == Visibility.Visible ||
-                    GoToSourceVisibility == Visibility.Visible ||
-                    ShareItemVisibility == Visibility.Visible ||
-                    RefreshVisibility == Visibility.Visible)
-                {
-                    return Visibility.Visible;
-                }
-                return Visibility.Collapsed;
+                return Visibility.Visible;
             }
         }
 
@@ -85,7 +77,7 @@ namespace AppStudio.ViewModels
         abstract public void GetShareContent(DataRequest dataRequest);
     }
 
-    abstract public class ViewModelBase<T> : ViewModelBase where T : BindableSchemaBase
+    abstract public class ViewModelBase<T> : ViewModelBase where T : BindableSchemaBase, new()
     {
         private const int PREVIEWITEMS_COUNT = 6;
 
@@ -185,18 +177,18 @@ namespace AppStudio.ViewModels
                 }
 
                 // Share SelectedItem DefaultImageUrl
-                string imageUrl = currentItem.DefaultImageUrl;
-                if (!string.IsNullOrEmpty(imageUrl))
+                string Image = currentItem.DefaultImageUrl;
+                if (!string.IsNullOrEmpty(Image))
                 {
-                    if (imageUrl.StartsWith("http", StringComparison.OrdinalIgnoreCase))
+                    if (Image.StartsWith("http", StringComparison.OrdinalIgnoreCase))
                     {
-                        dataRequest.Data.SetWebLink(new Uri(imageUrl));
+                        dataRequest.Data.SetWebLink(new Uri(Image));
                     }
                     else
                     {
-                        imageUrl = string.Format("ms-appx://{0}", imageUrl);
+                        Image = string.Format("ms-appx://{0}", Image);
                     }
-                    dataRequest.Data.SetBitmap(RandomAccessStreamReference.CreateFromUri(new Uri(imageUrl)));
+                    dataRequest.Data.SetBitmap(RandomAccessStreamReference.CreateFromUri(new Uri(Image)));
                 }
             }
         }
@@ -233,6 +225,67 @@ namespace AppStudio.ViewModels
                     await LoadItemsAsync(true);
                 });
             }
+        }
+        public ICommand AddCommand
+        {
+            get { return new DelegateCommand(AddItemAsync); }
+        }
+
+        public ICommand DeleteCommand
+        {
+            get { return new DelegateCommand(DeleteItemAsync); }
+        }
+
+        public ICommand SaveCommand
+        {
+            get { return new DelegateCommand(SaveItemAsync); }
+        }
+
+        public abstract bool CanSave();
+       
+
+        public abstract void AddItemAsync();
+       
+        private async void DeleteItemAsync()
+        {
+            ProgressBarVisibility = Visibility.Visible;
+            var currentItem = GetCurrentItem();
+
+            var messageDialog = new MessageDialog(currentItem.DefaultTitle, "Are you sure you want to delete this item?");
+            messageDialog.Commands.Add(new UICommand("Yes"));
+            messageDialog.Commands.Add(new UICommand("No"));
+            var result = await messageDialog.ShowAsync();
+            if (result.Label == "Yes")
+            {
+                await DataSource.DeleteAsync(currentItem);
+                Items.Remove(currentItem);
+                OnPropertyChanged("PreviewItems");
+                OnPropertyChanged("Items");
+                OnPropertyChanged("HasMoreItems");
+            }
+         
+            ProgressBarVisibility = Visibility.Collapsed;
+        }
+      
+        private async void SaveItemAsync()
+        {
+            if (!CanSave())
+            {
+                var cannotSaveMessageDialog = new MessageDialog("You must fill all data.", "Attention!");
+                cannotSaveMessageDialog.Commands.Add(new UICommand("Ok"));
+                await cannotSaveMessageDialog.ShowAsync();
+                return;
+            }
+            ProgressBarVisibility = Visibility.Visible;
+            var currentItem = GetCurrentItem();
+            var messageDialog = new MessageDialog(currentItem.DefaultTitle, "The item was saved!");
+            messageDialog.Commands.Add(new UICommand("Ok"));
+            await DataSource.SaveAsync(currentItem);
+            await messageDialog.ShowAsync();
+            OnPropertyChanged("Items");
+            OnPropertyChanged("PreviewItems");
+            OnPropertyChanged("HasMoreItems");
+            ProgressBarVisibility = Visibility.Collapsed;
         }
 
         //

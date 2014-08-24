@@ -3,8 +3,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
   <!-- Colors -->
-  <SolidColorBrush x:Key="AppForegroundColor" Color="#ffffff" />
-  <SolidColorBrush x:Key="AppBackgroundColor" Color="#000000" />
+    <SolidColorBrush x:Key="AppForegroundColor" Color="#274000" />
+    <SolidColorBrush x:Key="AppBackgroundColor" Color="#f2f2f2" />
 
   <!-- Images -->
   <BitmapImage x:Key="AppLogoImage" UriSource="/Assets/ApplicationLogo.png"/>
@@ -13,10 +13,10 @@
   <BitmapImage x:Key="VideoError" UriSource="/Assets/VideoError.png"/>
 
   <!-- App Background -->
-  <SolidColorBrush x:Key="AppBackground" Color="#000000" />
+    <SolidColorBrush x:Key="AppBackground" Color="#f2f2f2" />
 
   <!-- AppBar Background -->
-  <SolidColorBrush x:Key="AppBarBackground" Color="#000000" />
+    <SolidColorBrush x:Key="AppBarBackground" Color="#274000" />
 
   <!-- Page Header -->
   <DataTemplate x:Key="PageHeader">

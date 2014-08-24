@@ -53,6 +53,16 @@ namespace AppStudio.ViewModels
             get { return false; }
         }
 
+        public override bool CanSave()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void AddItemAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         override protected void NavigateToSelectedItem()
         {
             var currentItem = GetCurrentItem();

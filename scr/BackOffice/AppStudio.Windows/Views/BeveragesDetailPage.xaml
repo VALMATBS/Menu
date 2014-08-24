@@ -2,8 +2,6 @@
     x:Class="AppStudio.Views.BeveragesDetail"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:AppStudio.Views"
-    xmlns:controls="using:AppStudio.Controls"    
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
@@ -71,12 +69,20 @@
 
   <Page.BottomAppBar>
     <CommandBar Background="{StaticResource AppBarBackground}">
-      <AppBarButton DataContext="{Binding BeveragesModel}" x:Uid="GoToSourceButton" Visibility="{Binding GoToSourceVisibility}"
-                    Command="{Binding GoToSourceCommand}">
+      <AppBarButton DataContext="{Binding BeveragesModel}" 
+                    x:Uid="SaveButton" 
+                    Command="{Binding SaveCommand}">
         <AppBarButton.Icon>
-          <BitmapIcon UriSource="ms-appx:///Assets/AppBar/GoToSource.png"/>
+          <BitmapIcon UriSource="ms-appx:///Assets/AppBar/Save.png"/>
         </AppBarButton.Icon>
       </AppBarButton>
-    </CommandBar>
+            <AppBarButton DataContext="{Binding BeveragesModel}" 
+                    x:Uid="DeleteButton" 
+                    Command="{Binding DeleteCommand}">
+                <AppBarButton.Icon>
+                    <BitmapIcon UriSource="ms-appx:///Assets/AppBar/Delete.png"/>
+                </AppBarButton.Icon>
+            </AppBarButton>
+        </CommandBar>
   </Page.BottomAppBar>
 </Page>

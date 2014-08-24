@@ -11,8 +11,8 @@ namespace AppStudio.Data
         private string _title;
         private string _summary;
         private string _content;
-        private string _imageUrl;
-        private string _extraImageUrl;
+        private string _Image;
+        private string _extraImage;
         private string _mediaUrl;
         private string _feedUrl;
         private string _author;
@@ -36,16 +36,16 @@ namespace AppStudio.Data
             set { SetProperty(ref _content, value); }
         }
 
-        public string ImageUrl
+        public string Image
         {
-            get { return _imageUrl; }
-            set { SetProperty(ref _imageUrl, value); }
+            get { return _Image; }
+            set { SetProperty(ref _Image, value); }
         }
 
-        public string ExtraImageUrl
+        public string ExtraImage
         {
-            get { return _extraImageUrl; }
-            set { SetProperty(ref _extraImageUrl, value); }
+            get { return _extraImage; }
+            set { SetProperty(ref _extraImage, value); }
         }
 
         public string MediaUrl
@@ -84,7 +84,7 @@ namespace AppStudio.Data
 
         public override string DefaultImageUrl
         {
-            get { return ImageUrl; }
+            get { return Image; }
         }
 
         public override string DefaultContent
@@ -106,10 +106,10 @@ namespace AppStudio.Data
                         return String.Format("{0}", Summary);
                     case "content":
                         return String.Format("{0}", Content);
-                    case "imageurl":
-                        return String.Format("{0}", ImageUrl);
-                    case "extraimageurl":
-                        return String.Format("{0}", ExtraImageUrl);
+                    case "Image":
+                        return String.Format("{0}", Image);
+                    case "extraImage":
+                        return String.Format("{0}", ExtraImage);
                     case "mediaurl":
                         return String.Format("{0}", MediaUrl);
                     case "feedurl":
@@ -122,7 +122,7 @@ namespace AppStudio.Data
                         return String.Format("{0}", DefaultTitle);
                     case "defaultsummary":
                         return String.Format("{0}", DefaultSummary);
-                    case "defaultimageurl":
+                    case "DefaultImageUrl":
                         return String.Format("{0}", DefaultImageUrl);
                     default:
                         break;

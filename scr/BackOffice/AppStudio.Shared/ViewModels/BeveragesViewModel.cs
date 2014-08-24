@@ -36,6 +36,30 @@ namespace AppStudio.ViewModels
             return new BeveragesDataSource(); // CollectionDataSource
         }
 
+        public override bool CanSave()
+        {
+            return !string.IsNullOrEmpty(SelectedItem.Title) &&
+                   !string.IsNullOrEmpty(SelectedItem.Subtitle) &&
+                   !string.IsNullOrEmpty(SelectedItem.Image) &&
+                   !string.IsNullOrEmpty(SelectedItem.Description);
+        }
+
+        public override void AddItemAsync()
+        {
+            ProgressBarVisibility = Visibility.Visible;
+
+            ProgressBarVisibility = Visibility.Visible;
+            var newItem = new BeveragesSchema();
+            newItem.IsNew = true;
+            Items.Add(newItem);
+            NavigationServices.NavigateToPage("BeveragesDetail", newItem);
+            OnPropertyChanged("PreviewItems");
+            OnPropertyChanged("HasMoreItems");
+
+            ProgressBarVisibility = Visibility.Collapsed;
+            ProgressBarVisibility = Visibility.Collapsed;
+        }
+
 
         override public Visibility PinToStartVisibility
         {

@@ -13,7 +13,13 @@ namespace AppStudio.Data
         private string _starter1;
         private string _main1;
         private string _dessert1;
-         
+        private bool _isNew;
+
+        public bool IsNew
+        {
+            get { return _isNew; }
+            set { _isNew = value; }
+        }
         public string Title
         {
             get { return _title; }
@@ -84,7 +90,7 @@ namespace AppStudio.Data
                         return DefaultTitle;
                     case "defaultsummary":
                         return DefaultSummary;
-                    case "defaultimageurl":
+                    case "DefaultImageUrl":
                         return DefaultImageUrl;
                     default:
                         break;

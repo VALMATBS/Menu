@@ -12,7 +12,13 @@ namespace AppStudio.Data
         private string _type;
         private string _target;
         private string _icon;
+        private bool _isNew;
 
+        public bool IsNew
+        {
+            get { return _isNew; }
+            set { _isNew = value; }
+        }
         public string Name
         {
             get { return _name; }
@@ -83,7 +89,7 @@ namespace AppStudio.Data
                         return String.Format("{0}", DefaultTitle);
                     case "defaultsummary":
                         return String.Format("{0}", DefaultSummary);
-                    case "defaultimageurl":
+                    case "DefaultImageUrl":
                         return String.Format("{0}", DefaultImageUrl);
                     default:
                         break;

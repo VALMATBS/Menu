@@ -50,6 +50,11 @@ namespace AppStudio.Data
             get { return "DashboardDataSource"; }
         }
 
+        public override Task SaveAsync(MenuSchema currentItem)
+        {
+            throw new NotImplementedException();
+        }
+
         public override bool HasStaticData
         {
             get { return true; }
@@ -61,6 +66,11 @@ namespace AppStudio.Data
             {
                 return _data;
             });
+        }
+
+        public override Task DeleteAsync(MenuSchema currentItem)
+        {
+            throw new NotImplementedException();
         }
     }
 }

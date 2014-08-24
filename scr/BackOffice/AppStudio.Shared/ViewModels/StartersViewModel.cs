@@ -30,12 +30,34 @@ namespace AppStudio.ViewModels
                 return itemClickCommand;
             }
         }
-
+        public override bool CanSave()
+        {
+            return !string.IsNullOrEmpty(SelectedItem.Title) &&
+                   !string.IsNullOrEmpty(SelectedItem.Subtitle) &&
+                   !string.IsNullOrEmpty(SelectedItem.Image) &&
+                   !string.IsNullOrEmpty(SelectedItem.Description);
+        }
         override protected DataSourceBase<StartersSchema> CreateDataSource()
         {
             return new StartersDataSource(); // CollectionDataSource
         }
 
+        public override void AddItemAsync()
+        {
+            ProgressBarVisibility = Visibility.Visible;
+
+            ProgressBarVisibility = Visibility.Visible;
+            var newItem = new StartersSchema();
+            newItem.IsNew = true;
+            Items.Add(newItem);
+            SelectedItem = newItem;
+            NavigationServices.NavigateToPage("StartersDetail", newItem);
+            OnPropertyChanged("PreviewItems");
+            OnPropertyChanged("HasMoreItems");
+
+            ProgressBarVisibility = Visibility.Collapsed;
+            ProgressBarVisibility = Visibility.Collapsed;
+        }
 
         override public Visibility PinToStartVisibility
         {
@@ -61,6 +83,7 @@ namespace AppStudio.ViewModels
         {
             await base.SpeakText("Description");
         }
+
 
         override public void NavigateToSectionList()
         {

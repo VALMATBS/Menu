@@ -48,6 +48,8 @@ namespace AppStudio.Views
         {
             _navigationHelper.OnNavigatedTo(e);
             await SpecialOffersModel.LoadItemsAsync();
+            BottomAppBar.IsOpen = true;
+            BottomAppBar.IsSticky = true;
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)

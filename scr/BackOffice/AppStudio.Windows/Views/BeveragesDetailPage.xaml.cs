@@ -5,7 +5,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using Windows.ApplicationModel.DataTransfer;
-
+using AppStudio.Data;
 using AppStudio.Services;
 using AppStudio.ViewModels;
 
@@ -54,6 +54,10 @@ namespace AppStudio.Views
             _navigationHelper.OnNavigatedTo(e);
 
             await BeveragesModel.LoadItemsAsync();
+            if (e.Parameter is BeveragesSchema)
+            {
+                BeveragesModel.Items.Add(e.Parameter as BeveragesSchema);
+            }
             BeveragesModel.SelectItem(e.Parameter);
 
             if (BeveragesModel != null)
@@ -61,6 +65,8 @@ namespace AppStudio.Views
                 BeveragesModel.ViewType = ViewTypes.Detail;
             }
             DataContext = this;
+            BottomAppBar.IsOpen = true;
+            BottomAppBar.IsSticky = true;
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)

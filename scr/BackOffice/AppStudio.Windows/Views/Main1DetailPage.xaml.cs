@@ -5,7 +5,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using Windows.ApplicationModel.DataTransfer;
-
+using AppStudio.Data;
 using AppStudio.Services;
 using AppStudio.ViewModels;
 
@@ -54,6 +54,10 @@ namespace AppStudio.Views
             _navigationHelper.OnNavigatedTo(e);
 
             await Main1Model.LoadItemsAsync();
+            if (e.Parameter is MainSchema)
+            {
+                Main1Model.Items.Add(e.Parameter as MainSchema);
+            }
             Main1Model.SelectItem(e.Parameter);
 
             if (Main1Model != null)
@@ -61,6 +65,8 @@ namespace AppStudio.Views
                 Main1Model.ViewType = ViewTypes.Detail;
             }
             DataContext = this;
+            BottomAppBar.IsOpen = true;
+            BottomAppBar.IsSticky = true;
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)

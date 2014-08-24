@@ -126,11 +126,17 @@
   <data name="AboutSection.Text" xml:space="preserve">
     <value>about</value>
   </data>
+  <data name="AddButton.Label" xml:space="preserve">
+    <value>add</value>
+  </data>
   <data name="AdvertisementSection.Header" xml:space="preserve">
     <value>Advertisement</value>
   </data>
   <data name="AppVersion.Text" xml:space="preserve">
     <value>App version:</value>
+  </data>
+  <data name="DeleteButton.Label" xml:space="preserve">
+    <value>delete</value>
   </data>
   <data name="DevelopedBy.Text" xml:space="preserve">
     <value>Developed by:</value>
@@ -158,6 +164,9 @@
   </data>
   <data name="RefreshButton.Label" xml:space="preserve">
     <value>refresh</value>
+  </data>
+  <data name="SaveButton.Label" xml:space="preserve">
+    <value>save</value>
   </data>
   <data name="ShareItemButton.Label" xml:space="preserve">
     <value>share</value>

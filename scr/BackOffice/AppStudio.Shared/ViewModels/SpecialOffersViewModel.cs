@@ -30,13 +30,34 @@ namespace AppStudio.ViewModels
                 return itemClickCommand;
             }
         }
-
+        public override bool CanSave()
+        {
+            return !string.IsNullOrEmpty(SelectedItem.Title) &&
+                   !string.IsNullOrEmpty(SelectedItem.Subtitle) &&
+                   !string.IsNullOrEmpty(SelectedItem.Starter1) &&
+                   !string.IsNullOrEmpty(SelectedItem.Main1) &&
+                   !string.IsNullOrEmpty(SelectedItem.Dessert1);
+        }
         override protected DataSourceBase<SpecialOffersSchema> CreateDataSource()
         {
             return new SpecialOffersDataSource(); // CollectionDataSource
         }
 
+        public override void AddItemAsync()
+        {
+            ProgressBarVisibility = Visibility.Visible;
 
+            ProgressBarVisibility = Visibility.Visible;
+            var newItem = new SpecialOffersSchema();
+            newItem.IsNew = true;
+            Items.Add(newItem);
+            NavigationServices.NavigateToPage("SpecialOffersDetail", newItem);
+            OnPropertyChanged("PreviewItems");
+            OnPropertyChanged("HasMoreItems");
+
+            ProgressBarVisibility = Visibility.Collapsed;
+            ProgressBarVisibility = Visibility.Collapsed;
+        }
         override public Visibility PinToStartVisibility
         {
             get { return ViewType == ViewTypes.Detail ? Visibility.Visible : Visibility.Collapsed; }

@@ -67,7 +67,13 @@
 
   <Page.BottomAppBar>
     <CommandBar Background="{StaticResource AppBarBackground}">
-      <AppBarButton x:Uid="RefreshButton" DataContext="{Binding StartersModel}" Visibility="{Binding RefreshVisibility}"
+
+            <AppBarButton x:Uid="AddButton"      Command="{Binding AddCommand}" DataContext="{Binding StartersModel}">
+                <AppBarButton.Icon>
+                    <BitmapIcon UriSource="ms-appx:///Assets/AppBar/Add.png"/>
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarButton x:Uid="RefreshButton" DataContext="{Binding StartersModel}" Visibility="{Binding RefreshVisibility}"
                     Command="{Binding RefreshCommand}">
         <AppBarButton.Icon>
           <BitmapIcon UriSource="ms-appx:///Assets/AppBar/Refresh.png"/>

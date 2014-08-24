@@ -10,9 +10,15 @@ namespace AppStudio.Data
     {
         private string _title;
         private string _subtitle;
-        private string _imageUrl;
+        private string _Image;
         private string _description;
-         
+        private bool _isNew;
+
+        public bool IsNew
+        {
+            get { return _isNew; }
+            set { _isNew = value; }
+        }
         public string Title
         {
             get { return _title; }
@@ -25,10 +31,10 @@ namespace AppStudio.Data
             set { SetProperty(ref _subtitle, value); }
         }
  
-        public string ImageUrl
+        public string Image
         {
-            get { return _imageUrl; }
-            set { SetProperty(ref _imageUrl, value); }
+            get { return _Image; }
+            set { SetProperty(ref _Image, value); }
         }
  
         public string Description
@@ -49,7 +55,7 @@ namespace AppStudio.Data
 
         public override string DefaultImageUrl
         {
-            get { return ImageUrl; }
+            get { return Image; }
         }
 
         public override string DefaultContent
@@ -67,15 +73,15 @@ namespace AppStudio.Data
                         return String.Format("{0}", Title); 
                     case "subtitle":
                         return String.Format("{0}", Subtitle); 
-                    case "imageurl":
-                        return String.Format("{0}", ImageUrl); 
+                    case "Image":
+                        return String.Format("{0}", Image); 
                     case "description":
                         return String.Format("{0}", Description); 
                     case "defaulttitle":
                         return DefaultTitle;
                     case "defaultsummary":
                         return DefaultSummary;
-                    case "defaultimageurl":
+                    case "DefaultImageUrl":
                         return DefaultImageUrl;
                     default:
                         break;
@@ -92,7 +98,7 @@ namespace AppStudio.Data
                 return false;
             }
 
-            return this.Title == other.Title && this.Subtitle == other.Subtitle && this.ImageUrl == other.ImageUrl && this.Description == other.Description;
+            return this.Title == other.Title && this.Subtitle == other.Subtitle && this.Image == other.Image && this.Description == other.Description;
         }
     }
 }

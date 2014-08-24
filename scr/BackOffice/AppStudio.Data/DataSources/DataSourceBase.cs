@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.NetworkInformation;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace AppStudio.Data
 {
     public abstract class DataSourceBase<T> where T : BindableSchemaBase
     {
-        private const int ContentExpirationHours = 2;
+        private const int ContentExpirationHours = 0;
+        private const int ContentExpirationMinutes = 5;
 
         protected abstract string CacheKey { get; }
 
         public abstract Task<IEnumerable<T>> LoadDataAsync();
 
+        public abstract Task DeleteAsync(T item);
+
+        public abstract Task SaveAsync(T item);
+        
         public abstract bool HasStaticData { get; }
 
         public async Task<DateTime> LoadDataAsync(ObservableCollection<T> viewItems, bool forceRefresh)
@@ -38,21 +42,27 @@ namespace AppStudio.Data
 
                 if (NetworkInterface.GetIsNetworkAvailable() && DataNeedToBeUpdated(forceRefresh, dataInCache))
                 {
-                    var freshData = new DataSourceContent<T>()
-                    {
-                        TimeStamp = DateTime.Now,
-                        Items = await LoadDataAsync()
-                    };
-
-                    timeStamp = freshData.TimeStamp;
+                    var freshData = await UpdateCache();
 
                     viewItems.AddRangeUnique(freshData.Items);
-
-                    await AppCache.AddItemsAsync(CacheKey, freshData);
+                    timeStamp = freshData.TimeStamp;
                 }
             }
             return timeStamp;
         }
+
+        internal async Task<DataSourceContent<T>> UpdateCache()
+        {
+            var freshData = new DataSourceContent<T>()
+            {
+                TimeStamp = DateTime.Now,
+                Items = await LoadDataAsync()
+            };
+
+            await AppCache.AddItemsAsync(CacheKey, freshData);
+            return freshData;
+        }
+
 
         private bool DataNeedToBeUpdated(bool forceRefresh, DataSourceContent<T> dataInCache)
         {
@@ -61,7 +71,7 @@ namespace AppStudio.Data
 
         private bool IsContentExpirated(DateTime timeStamp)
         {
-            return (DateTime.Now - timeStamp) > new TimeSpan(ContentExpirationHours, 0, 0);
+            return (DateTime.Now - timeStamp) > new TimeSpan(ContentExpirationHours, ContentExpirationMinutes, 0);
         }
     }
 }

@@ -5,7 +5,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using Windows.ApplicationModel.DataTransfer;
-
+using AppStudio.Data;
 using AppStudio.Services;
 using AppStudio.ViewModels;
 
@@ -54,6 +54,10 @@ namespace AppStudio.Views
             _navigationHelper.OnNavigatedTo(e);
 
             await StartersModel.LoadItemsAsync();
+            if (e.Parameter is StartersSchema)
+            {
+                StartersModel.Items.Add(e.Parameter as StartersSchema);
+            }
             StartersModel.SelectItem(e.Parameter);
 
             if (StartersModel != null)
@@ -67,6 +71,8 @@ namespace AppStudio.Views
         {
             _navigationHelper.OnNavigatedFrom(e);
             _dataTransferManager.DataRequested -= OnDataRequested;
+            BottomAppBar.IsOpen = true;
+            BottomAppBar.IsSticky = true;
         }
 
         private void OnDataRequested(DataTransferManager sender, DataRequestedEventArgs args)

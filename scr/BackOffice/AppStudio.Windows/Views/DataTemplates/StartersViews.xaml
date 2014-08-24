@@ -41,7 +41,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Image Grid.RowSpan="2" Margin="16" Source="{Binding ImageUrl, Converter={StaticResource ThumbnailConverter}, ConverterParameter=180}" MaxHeight="90" Stretch="UniformToFill" />
+            <Image Grid.RowSpan="2" Margin="16" Source="{Binding Image, Converter={StaticResource ThumbnailConverter}, ConverterParameter=180}" MaxHeight="90" Stretch="UniformToFill" />
             <TextBlock Grid.Row="0" Grid.Column="1" Margin="0, 16, 16, 0" Style="{StaticResource ItemHeaderText}" Text="{Binding Title, Converter={StaticResource TextPlainConverter}, ConverterParameter=140}" />
             <TextBlock Grid.Row="1" Grid.Column="1" Margin="0, 0, 16, 16" Style="{StaticResource ItemSubheaderText}" Text="{Binding Subtitle, Converter={StaticResource TextPlainConverter}, ConverterParameter=280}" />
         </Grid>
@@ -61,52 +61,67 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Image Grid.RowSpan="2" Margin="8" Source="{Binding ImageUrl, Converter={StaticResource ThumbnailConverter}, ConverterParameter=180}" MaxHeight="70" Stretch="UniformToFill" />
+            <Image Grid.RowSpan="2" Margin="8" Source="{Binding Image, Converter={StaticResource ThumbnailConverter}, ConverterParameter=180}" MaxHeight="70" Stretch="UniformToFill" />
             <TextBlock Grid.Row="0" Grid.Column="1" Margin="0, 8, 8, 0" Style="{StaticResource ItemHeaderTextSnapped}" Text="{Binding Title, Converter={StaticResource TextPlainConverter}, ConverterParameter=140}" />
             <TextBlock Grid.Row="1" Grid.Column="1" Margin="0, 0, 8, 8" Style="{StaticResource ItemSubheaderTextSnapped}" Text="{Binding Subtitle, Converter={StaticResource TextPlainConverter}, ConverterParameter=280}" />
         </Grid>
     </DataTemplate>
 
     <!-- InstanceTitlePhotoDescription -->
-    <DataTemplate x:Key="Starters1DetailDetail">    
-        <Grid Margin="12,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-            <TextBlock Grid.ColumnSpan="2" Style="{StaticResource HeaderText}" Text="{Binding Title, Converter={StaticResource TextPlainConverter}, ConverterParameter = 140}" />
-          
-            <TextBlock Grid.Row="1" Margin="0,12,12,12" VerticalAlignment="Top" Style="{StaticResource ItemHeaderText}" Text="{Binding Title, Converter={StaticResource TextPlainConverter}, ConverterParameter=140}" />
-          
-            <Button Grid.Row="2" Margin="0,24,0,12" Width="480" Height="300" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource ImageButtonStyle}" Command="{Binding Source={StaticResource ActionCommands}, Path=ShowImage}" CommandParameter="{Binding ImageUrl}">
-                <Button.Background>
-                    <ImageBrush ImageSource="{Binding ImageUrl, Converter={StaticResource ThumbnailConverter}, ConverterParameter=300}" Stretch="UniformToFill" />
-                </Button.Background>
-            </Button>
-          
-            <ScrollViewer Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Margin="24" VerticalScrollBarVisibility="Auto">
-              <RichTextBlock Style="{StaticResource Html2XamlStyle}" html2xaml:Properties.Html="{Binding Description}" />
-            </ScrollViewer>
-        </Grid>    
+    <DataTemplate x:Key="Starters1DetailDetail">
+        <StackPanel Margin="120,0,0,0">
+            <TextBlock Text="Title:" 
+                     Style="{StaticResource ItemHeaderTextSnapped}" />
+            <TextBox Grid.Row="0" Margin="0,20,0,0"  Grid.Column="1" 
+                     Text="{Binding Title, Mode=TwoWay}" Width="400" HorizontalAlignment="Left"/>
+            <TextBlock Text="Subtitle:" Margin="0,20,0,0" 
+                     Style="{StaticResource ItemHeaderTextSnapped}" />
+            <TextBox Grid.Row="0" Grid.Column="1" 
+                     Text="{Binding Subtitle, Mode=TwoWay}" Margin="0,20,0,0"  Width="400" HorizontalAlignment="Left"/>
+            <TextBlock Text="Image:" Margin="0,20,0,0" 
+                     Style="{StaticResource ItemHeaderTextSnapped}" />
+            <TextBox Grid.Row="0" Grid.Column="1" Margin="0,20,0,0"  
+                     Text="{Binding Image, Mode=TwoWay}" Width="400" HorizontalAlignment="Left"/>
+            <Image Grid.RowSpan="2" 
+                   Source="{Binding Image}" Margin="0,20,0,0" 
+                   Width="200" Height="200"
+                   HorizontalAlignment="Left" Stretch="UniformToFill" />
+            <TextBlock Text="Description:" Margin="0,20,0,0" 
+                     Style="{StaticResource ItemHeaderTextSnapped}" />
+            <TextBox Grid.Row="1" Grid.Column="1" 
+                     Margin="0,20,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                     ScrollViewer.VerticalScrollBarVisibility="Auto"
+                     AcceptsReturn="true" HorizontalAlignment="Left"
+                     Height="200" MaxHeight="200" Width="800" MaxWidth="800"
+                     Text="{Binding Description, Mode=TwoWay}" />
+        </StackPanel>
     </DataTemplate>
     <DataTemplate x:Key="Starters1DetailDetailSnapped">
-        <Grid Width="230">
-            <StackPanel>
-               <TextBlock Margin="0,0,0,30" Style="{StaticResource HeaderText}" Text="{Binding Title, Converter={StaticResource TextPlainConverter}, ConverterParameter = 140}" />
-                <TextBlock Margin="0, 0, 16, 16" Style="{StaticResource ItemHeaderText}" Text="{Binding Title, Converter={StaticResource TextPlainConverter}, ConverterParameter=140}" />
-                <Image Margin="0" Source="{Binding ImageUrl, Converter={StaticResource ThumbnailConverter}, ConverterParameter=250}" MaxHeight="250" VerticalAlignment="Top" Stretch="UniformToFill" />
-               <ScrollViewer Width="210" Height="300"  Margin="0, 30"  VerticalScrollBarVisibility="Auto">
-                <RichTextBlock Style="{StaticResource Html2XamlStyle}" html2xaml:Properties.Html="{Binding Description}" />
-              </ScrollViewer>
-            </StackPanel>
-        </Grid>
+        <StackPanel Margin="20,0,0,0" Width="230">
+            <TextBlock Text="Title:" 
+                     Style="{StaticResource ItemHeaderTextSnapped}" />
+            <TextBox Grid.Row="0" Margin="0,20,0,0"  Grid.Column="1" 
+                     Text="{Binding Title, Mode=TwoWay}" Width="200" HorizontalAlignment="Left"/>
+            <TextBlock Text="Subtitle:" Margin="0,20,0,0" 
+                     Style="{StaticResource ItemHeaderTextSnapped}" />
+            <TextBox Grid.Row="0" Grid.Column="1" 
+                     Text="{Binding Subtitle, Mode=TwoWay}" Margin="0,20,0,0"  Width="200" HorizontalAlignment="Left"/>
+            <TextBlock Text="Image:" Margin="0,20,0,0" 
+                     Style="{StaticResource ItemHeaderTextSnapped}" />
+            <TextBox Grid.Row="0" Grid.Column="1" Margin="0,20,0,0"  
+                     Text="{Binding Image, Mode=TwoWay}" Width="200" HorizontalAlignment="Left"/>
+            <Image Grid.RowSpan="2" 
+                   Source="{Binding Image}" Margin="0,20,0,0" 
+                   Width="200" Height="200"
+                   HorizontalAlignment="Left" Stretch="UniformToFill" />
+            <TextBlock Text="Description:" Margin="0,20,0,0" 
+                     Style="{StaticResource ItemHeaderTextSnapped}" />
+            <TextBox Grid.Row="1" Grid.Column="1" 
+                     Margin="0,20,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                     ScrollViewer.VerticalScrollBarVisibility="Auto"
+                     AcceptsReturn="true" HorizontalAlignment="Left"
+                     Height="200" MaxHeight="200" Width="200" MaxWidth="200"
+                     Text="{Binding Description, Mode=TwoWay}" />
+        </StackPanel>
     </DataTemplate>
 </ResourceDictionary>

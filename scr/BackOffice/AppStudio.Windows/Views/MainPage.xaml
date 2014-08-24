@@ -15,7 +15,7 @@
     </Grid.ChildrenTransitions>
 
     <Hub x:Name="Container"  DataContext="{Binding}" Header="{Binding NavigationHelper}" HeaderTemplate="{StaticResource PageHeader}" SectionHeaderClick="OnSectionHeaderClick" Style="{StaticResource AppHubStyle}" SectionsInViewChanged="OnSectionsInViewChanged">
-      <HubSection x:Name="DashboardSection" Header="Dashboard" DataContext="{Binding MainViewModel.DashboardModel}" ContentTemplate="{StaticResource DashboardList}" IsHeaderInteractive="{Binding HasMoreItems}" Style="{StaticResource AppHubSectionStyle}" />
+            <HubSection x:Name="DashboardSection" Margin="120,0,0,0" Header="Dashboard" DataContext="{Binding MainViewModel.DashboardModel}" ContentTemplate="{StaticResource DashboardList}" IsHeaderInteractive="{Binding HasMoreItems}" Style="{StaticResource AppHubSectionStyle}" />
     </Hub>
 
     <VisualStateManager.VisualStateGroups>
