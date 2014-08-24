@@ -78,7 +78,7 @@ namespace AppStudio.Menu.BackEnd.Controllers
         /// <returns>
         /// The <see cref="Task"/>.
         /// </returns>
-        public Task<SpecialOffersSchema> PatchSpecialOffersSchema(string id, Delta<SpecialOffersSchema> patch)
+        public async Task<SpecialOffersSchema> PatchSpecialOffersSchema(string id, Delta<SpecialOffersSchema> patch)
         {
             if (string.IsNullOrEmpty(id))
             {
@@ -88,7 +88,9 @@ namespace AppStudio.Menu.BackEnd.Controllers
             {
                 throw new ArgumentNullException("patch");
             }
-             return UpdateAsync(id, patch);
+            var dto = await UpdateAsync(id, patch);
+            await Services.Push.SendAsync(PushHelper.GetWindowsPushMessageForToastText01("Update:", dto.Title));
+            return dto;
         }
 
         /// <summary>
@@ -115,6 +117,7 @@ namespace AppStudio.Menu.BackEnd.Controllers
                 return BadRequest("There are properties that are not defined.");
             }
             var current = await InsertAsync(item);
+                await Services.Push.SendAsync(PushHelper.GetWindowsPushMessageForToastText01("Insert:", current.Title));
             return CreatedAtRoute("Tables", new { id = current.Id }, current);
         }
 

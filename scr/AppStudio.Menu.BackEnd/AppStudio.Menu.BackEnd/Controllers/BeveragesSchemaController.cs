@@ -15,7 +15,6 @@ using System.Web.Http.Controllers;
 using System.Web.Http.OData;
 using AppStudio.Data;
 using AppStudio.Menu.BackEnd.Models;
-using Microsoft.Data.Edm.Validation;
 using Microsoft.WindowsAzure.Mobile.Service;
 
 namespace AppStudio.Menu.BackEnd.Controllers
@@ -79,7 +78,7 @@ namespace AppStudio.Menu.BackEnd.Controllers
         /// <returns>
         /// The <see cref="Task"/> of beverages schema.
         /// </returns>
-        public Task<BeveragesSchema> PatchBeveragesSchema(string id, Delta<BeveragesSchema> patch)
+        public async Task<BeveragesSchema> PatchBeveragesSchema(string id, Delta<BeveragesSchema> patch)
         {
             if (string.IsNullOrEmpty(id))
             {
@@ -89,7 +88,9 @@ namespace AppStudio.Menu.BackEnd.Controllers
             {
                 throw new ArgumentNullException("patch");
             }
-            return UpdateAsync(id, patch);
+            var dto = await UpdateAsync(id, patch);
+            await Services.Push.SendAsync(PushHelper.GetWindowsPushMessageForToastImageAndText03("Update:", dto.Title, dto.Subtitle, dto.Image));
+            return dto;
         }
 
         /// <summary>
@@ -115,6 +116,7 @@ namespace AppStudio.Menu.BackEnd.Controllers
                 return BadRequest("There are properties that are not defined.");
             }
             var current = await InsertAsync(item);
+            await Services.Push.SendAsync(PushHelper.GetWindowsPushMessageForToastImageAndText03("Insert:", current.Title, current.Subtitle, current.Image));
             return CreatedAtRoute("Tables", new { id = current.Id }, current);
         }
 
