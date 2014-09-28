@@ -1,7 +1,9 @@
 using System;
 using System.Linq;
 using System.Net.NetworkInformation;
-
+using System.Threading.Tasks;
+using Windows.Media.SpeechRecognition;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -36,6 +38,7 @@ namespace AppStudio.Views
             ApplicationView.GetForCurrentView().
                 SetDesiredBoundsMode(ApplicationViewBoundsMode.UseCoreWindow);
         }
+        
 
         public MainViewModel MainViewModel
         {
@@ -75,6 +78,16 @@ namespace AppStudio.Views
             _dataTransferManager.DataRequested += OnDataRequested;
             _navigationHelper.OnNavigatedTo(e);
             await MainViewModel.LoadDataAsync();
+            if (e.NavigationMode == NavigationMode.New)
+            {
+                await InstallVoiceCommandsAsync();
+            }
+        }
+
+        private async Task InstallVoiceCommandsAsync()
+        {
+            var storageFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Cortana.xml"));
+            await VoiceCommandManager.InstallCommandSetsFromStorageFileAsync(storageFile);
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)

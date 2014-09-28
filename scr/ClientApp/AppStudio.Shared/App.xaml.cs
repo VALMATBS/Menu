@@ -1,6 +1,6 @@
 using System;
 using System.Linq;
-
+using Windows.Media.SpeechRecognition;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
@@ -68,6 +68,71 @@ namespace AppStudio
                 RootFrame.GoBack();
                 e.Handled = true;
             }
+        }
+
+        /// <summary>
+        /// Handle OnActivated event to deal with File Open/Save continuation activation kinds
+        /// </summary>
+        /// <param name="args">Application activated event arguments, it can be casted to proper sub-type based on ActivationKind</param>
+        protected override void OnActivated(IActivatedEventArgs args)
+        {
+            base.OnActivated(args);
+          
+            if (args.Kind == ActivationKind.VoiceCommand)
+            {
+                var commandArgs = args as VoiceCommandActivatedEventArgs;
+                if (commandArgs != null)
+                {
+                    SpeechRecognitionResult speechRecognitionResult = commandArgs.Result;
+
+                    var voiceCommandName = speechRecognitionResult.RulePath[0];
+                    var textSpoken = speechRecognitionResult.Text;
+                    
+                    switch (voiceCommandName)
+                    {
+                        case "ShowCommand":
+                            if (textSpoken.ToLower().Contains("starters"))
+                            {
+                                RootFrame.Navigate(typeof (StartersPage));
+                            }
+                            if (textSpoken.ToLower().Contains("mains"))
+                            {
+                                RootFrame.Navigate(typeof(Main1Page));
+                            }
+                            if (textSpoken.ToLower().Contains("desserts"))
+                            {
+                                RootFrame.Navigate(typeof(DessertsPage));
+                            }
+                            if (textSpoken.ToLower().Contains("beverages"))
+                            {
+                                RootFrame.Navigate(typeof(BeveragesPage));
+                            }
+                            if (textSpoken.ToLower().Contains("special") || 
+                                textSpoken.ToLower().Contains("offer"))
+                            {
+                                RootFrame.Navigate(typeof(MainPage), "SpecialOffers");
+                            }
+                            break;
+                        case "NaturalLanguageCommand":
+                            if (textSpoken.ToLower().Contains("eat") ||
+                                textSpoken.ToLower().Contains("hungry"))
+                            {
+                                RootFrame.Navigate(typeof(Main1Page));
+                            }
+
+                            if (textSpoken.ToLower().Contains("drink"))
+                            {
+                                 RootFrame.Navigate(typeof (BeveragesPage));
+                            }
+                            if (textSpoken.ToLower().Contains("special"))
+                            {
+                                RootFrame.Navigate(typeof (MainPage), "SpecialOffers");
+                            }
+                            break;
+                    }
+                }
+            }
+            Window.Current.Activate();
         }
 #endif
 

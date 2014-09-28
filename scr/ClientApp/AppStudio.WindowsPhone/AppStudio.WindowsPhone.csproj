@@ -92,6 +92,7 @@
     <Content Include="Assets\AppBar\Refresh.png" />
     <Content Include="Assets\AppBar\TextToSpeech.png" />
     <Content Include="Assets\BadgeLogo.png" />
+    <Content Include="Cortana.xml" />
     <Content Include="Views\DataTemplates\NavigateViews.xaml" />
     <Content Include="Views\DataTemplates\StartersViews.xaml" />
     <Content Include="Views\DataTemplates\Main1Views.xaml" />
