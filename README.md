@@ -3,6 +3,10 @@ Menu
 
 Menu contains the Menu App generated using Menu Template in AppStudio with support for consume Azure Mobile Service and its BackOffice App.
 
+<MTMarkdownOptions output='html4'>
+<img  src="http://i1.wp.com/www.saramgsilva.com/wp-content/uploads/2014/09/090914_1243_MicrosoftsW3.png?w=584">
+</MTMarkdownOptions>  
+
 
 Articles
 ==
@@ -19,6 +23,50 @@ Articles
 
 > Microsoft’s Windows App Studio Beta: Submit Menu App in the Store (soon)
 
+
+Screens
+==
+
+> The Menu App for Windows 8.1
+
+<MTMarkdownOptions output='html4'>
+<img src="http://i0.wp.com/www.saramgsilva.com/wp-content/uploads/2014/09/090914_1243_MicrosoftsW51.png?w=584">
+</MTMarkdownOptions>  
+
+> The Menu App for Windows Phone 8.1
+
+<MTMarkdownOptions output='html4'>
+<img  src="http://s29.postimg.org/fl7tw0ml3/wp_ss_20140928_0002.png" height="350">
+</MTMarkdownOptions>  
+
+
+> BackOffice App
+
+<MTMarkdownOptions output='html4'>
+<img src="http://i2.wp.com/www.saramgsilva.com/wp-content/uploads/2014/09/091014_1545_Title137.png?w=584">
+
+<img src="http://i2.wp.com/www.saramgsilva.com/wp-content/uploads/2014/09/091014_1545_Title138.png?w=584">
+</MTMarkdownOptions>  
+
+
+> Push Notifications
+
+<MTMarkdownOptions output='html4'>
+<img src="http://i2.wp.com/www.saramgsilva.com/wp-content/uploads/2014/09/091014_1747_MicrosoftsW20.png?w=584">
+
+<img src="http://i0.wp.com/www.saramgsilva.com/wp-content/uploads/2014/09/091014_1747_MicrosoftsW21.png?w=584">
+</MTMarkdownOptions>  
+
+
+> Using Cortana
+
+<MTMarkdownOptions output='html4'>
+<img src="http://i0.wp.com/www.saramgsilva.com/wp-content/uploads/2014/09/092714_1719_Howtointegr5.png?w=584">    
+
+<img src="http://i2.wp.com/www.saramgsilva.com/wp-content/uploads/2014/09/092714_1719_Howtointegr6.png?w=584"> 
+
+<img src="http://i1.wp.com/www.saramgsilva.com/wp-content/uploads/2014/09/092714_1719_Howtointegr7.png?w=584">
+</MTMarkdownOptions>  
 
 
 Follow me
