@@ -21,7 +21,7 @@ Articles
 
 > [Microsoft’s Windows App Studio Beta: How to integrate Cortana in the Menu App](http://www.saramgsilva.com/index.php/2014/how-to-integrate-cortana-in-the-menu-app)
 
-> Microsoft’s Windows App Studio Beta: Submit Menu App in the Store (soon)
+> [Microsoft’s Windows App Studio Beta: Submit Menu App in the Store](http://wp.me/p4LXhq-IF)
 
 
 Screens
