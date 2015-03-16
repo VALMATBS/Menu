@@ -10,18 +10,19 @@
 using System.Data.Entity.Migrations;
 using AppStudio.Menu.BackEnd.Migrations;
 using Microsoft.WindowsAzure.Mobile.Service;
+using Microsoft.WindowsAzure.Mobile.Service.Config;
 
 namespace AppStudio.Menu.BackEnd
 {
     /// <summary>
     /// The web api config.
     /// </summary>
-    public static class WebApiConfig
+    public class WebApiConfig : IBootstrapper
     {
         /// <summary>
         /// The register.
         /// </summary>
-        public static void Register()
+        public void Initialize()
         {
             // Use this class to set configuration options for your mobile service
             var options = new ConfigOptions();
